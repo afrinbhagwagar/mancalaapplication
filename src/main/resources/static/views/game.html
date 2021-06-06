@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<script src="/js/lib/angular.min.js"></script>
+<script src="/js/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<script src="/js/app/app.js"></script>
+<script src="/js/app/mancalacontroller.js"></script>
+<script src="/js/app/mancalaservice.js"></script>
+
+<head>
+<style>
+.bothbutton {
+	padding: 35px 70px;
+	color: white;
+	text-align: center;
+	font-size: 30px;
+	font-weight: 15px;
+}
+
+.buttoncolor1 {
+	background-color: olive;
+}
+
+.buttoncolor2 {
+	background-color: maroon;
+}
+
+.player {
+	font-size: 30px;
+	text-align: center;
+}
+.playerturn{
+	color:gray;
+	font-size: 40px;
+	text-align: center;
+}
+</style>
+<title>Mancala Gaming Page</title>
+</head>
+
+<body ng-app="mancalaindex" ng-controller="mancalacontroller">
+	<form onload="loadGame()">
+		<table>
+			<tbody>
+				<tr>
+					<td colspan="8" class="playerturn" id="playerturn">{{currentPlayer}}'s turn</td>
+				</tr>
+			</tbody>
+		</table><br/><br/><br/><br/>
+		<table>
+			<tbody>
+				<tr>
+					<td colspan="8" class="player">Player A</td>
+				</tr>
+				<tr>
+					<td rowspan="2"><input type="button" id="button6"
+						value='{{allPits[6].amountOfStones}}'
+						class="bothbutton buttoncolor1"></td>
+					<td><input type="button" id="button5" ng-click="updatePits(5)"
+						value='{{allPits[5].amountOfStones}}'
+						class="bothbutton buttoncolor1"></td>
+					<td><input type="button" id="button4" ng-click="updatePits(4)"
+						value='{{allPits[4].amountOfStones}}'
+						class="bothbutton buttoncolor1"></td>
+					<td><input type="button" id="button3" ng-click="updatePits(3)"
+						value='{{allPits[3].amountOfStones}}'
+						class="bothbutton buttoncolor1"></td>
+					<td><input type="button" id="button2" ng-click="updatePits(2)"
+						value='{{allPits[2].amountOfStones}}'
+						class="bothbutton buttoncolor1"></td>
+					<td><input type="button" id="button1" ng-click="updatePits(1)"
+						value='{{allPits[1].amountOfStones}}'
+						class="bothbutton buttoncolor1"></td>
+					<td><input type="button" id="button0" ng-click="updatePits(0)"
+						value='{{allPits[0].amountOfStones}}'
+						class="bothbutton buttoncolor1"></td>
+					<td rowspan="2"><input type="button" id="button13"
+						value='{{allPits[13].amountOfStones}}'
+						class="bothbutton buttoncolor2"></td>
+				</tr>
+				<tr>
+					<td><input type="button" id="button7" ng-click="updatePits(7)"
+						value='{{allPits[7].amountOfStones}}'
+						class="bothbutton buttoncolor2"></td>
+					<td><input type="button" id="button8" ng-click="updatePits(8)"
+						value='{{allPits[8].amountOfStones}}'
+						class="bothbutton buttoncolor2"></td>
+					<td><input type="button" id="button9" ng-click="updatePits(9)"
+						value='{{allPits[9].amountOfStones}}'
+						class="bothbutton buttoncolor2"></td>
+					<td><input type="button" id="button10"
+						ng-click="updatePits(10)" value='{{allPits[10].amountOfStones}}'
+						class="bothbutton buttoncolor2"></td>
+					<td><input type="button" id="button11"
+						ng-click="updatePits(11)" value='{{allPits[11].amountOfStones}}'
+						class="bothbutton buttoncolor2"></td>
+					<td><input type="button" id="button12"
+						ng-click="updatePits(12)" value='{{allPits[12].amountOfStones}}'
+						class="bothbutton buttoncolor2"></td>
+				</tr>
+				<tr>
+					<td colspan="8" class="player">Player B</td>
+				</tr>
+			</tbody>
+		</table><br/><br/>
+		<table>
+			<tbody>
+				<tr>
+					<td colspan="8" class="player" id="winnerid" hidden="true">{{status.winner}}
+						is the winner</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+	position: fixed;
+	top: 45%;
+	left: 48%;
+	margin-top: -50px;
+	margin-left: -100px;
+}
+
+.button1 {
+	background-color: teal;
+	padding: 35px 65px;
+	color: black;
+	text-align: center;
+	font-size: 30px;
+	font-weight: 15px;
+}
+</style>
+<title>Mancala Welcome Page</title>
+</head>
+<body>
+	<div class="container">
+		<button id="myButton" class="button1">Start Game</button>
+	</div>
+	<script type="text/javascript">
+		document.getElementById("myButton").onclick = function() {
+			location.href = "/views/game.html";
+		};
+	</script>
+</body>
+</html>
